@@ -1,0 +1,220 @@
+/* Latest customer rating box in footer */
+.footer-latest-rating {
+  margin-top: 1.5em;
+  padding: 1em;
+  background: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  text-align: center;
+}
+.footer-latest-rating h4 {
+  margin-bottom: 0.5em;
+  color: #d35400;
+}
+.footer-rating-value {
+  font-size: 1.5em;
+  color: #f1c40f;
+  margin-bottom: 0.3em;
+}
+.footer-rating-text {
+  font-size: 1.1em;
+  color: #333;
+}
+/* Footer two-column layout */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-left {
+  flex: 1 1 250px;
+  min-width: 220px;
+}
+.footer-right {
+  flex: 1 1 250px;
+  min-width: 220px;
+  background: rgb(255,255,255,0.85);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  text-align: center;
+}
+.footer-rating-form label {
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+.footer-rating-form select,
+.footer-rating-form textarea {
+  margin: 0.5em 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0.3em;
+  width: 90%;
+  max-width: 220px;
+}
+.footer-rating-form button {
+  background: #d35400;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  margin-top: 0.5em;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.footer-rating-form button:hover {
+  background: #a04000;
+}
+/* Rating & Review Section */
+.rating-review {
+  background: rgb(255,255,255,0.85);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  max-width: 600px;
+  margin: 2rem auto 2rem auto;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+.rating-review h2 {
+  color: #d35400;
+  margin-bottom: 0.5em;
+}
+.rating-review .rating {
+  font-size: 2rem;
+  color: #f1c40f;
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+.rating-review .reviews p {
+  margin: 0.3em 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+/* Reset & Base */
+* {
+  margin: 1px;
+  padding: 1px;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+   
+  color: #333;
+  line-height: 1.6;
+  padding: 1rem;
+  background-image: url("../White.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Add background to main text containers for readability */
+ .category li, .category h2, .category li span {
+  background:rgb(217, 211, 217);
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  margin-bottom: 0.5em;
+}
+
+
+/* Header */
+header {
+  background-color:rgb(193, 216, 232);
+  text-align: left;
+  margin-bottom: 2rem;
+}
+header h1 {
+  font-size: 4rem;
+  text-align: left;
+  color: #560a25;
+
+}
+header p {
+  font-size: 1rem;
+  padding-left: 140px;
+  color: #130c0c;
+}
+header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+header img {
+  border-radius: 10%;
+  margin-right: 0.5rem;
+  height: 1em;
+  width: auto;
+  display: inline-block;
+  vertical-align: left;
+  margin-top: 1;
+  margin-bottom: 0;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+/* Menu Categories */
+.category {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  margin: auto;
+  background-image: url("../mainbackground1.png");
+}
+.category h2 {
+  font-size: 1.5rem;
+  color: #040b12;
+  margin-bottom: 0.5rem;
+}
+.category ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.category li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 48%;
+  min-width: 250px;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #c38585;
+  box-sizing: border-box;
+}
+.category li span {
+  font-size: 1rem;
+}
+
+/* Footer */
+footer {
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #431e1e;
+  margin-top: 2rem;
+  background-color: rgb(193, 216, 232);
+}
+footer a {
+  color: #214257;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .category h2 {
+    font-size: 1.2rem;
+  }
+  .category li span {
+    font-size: 0.9rem;
+  }
+}

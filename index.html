@@ -5,6 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cloud Kitchen Menu</title>
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+      
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const dropdownContent = this.closest('.menu-item-dropdown').querySelector('.dropdown-content');
+          dropdownContent.classList.toggle('show');
+          
+          // Close other dropdowns
+          document.querySelectorAll('.dropdown-content').forEach(content => {
+            if (content !== dropdownContent) {
+              content.classList.remove('show');
+            }
+          });
+        });
+      });
+
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.menu-item-dropdown')) {
+          document.querySelectorAll('.dropdown-content').forEach(content => {
+            content.classList.remove('show');
+          });
+        }
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -16,36 +45,134 @@
   </header>
 
   <main>
-    <section class="category">
-      <h2>🍛 Main Course</h2>
-      <ul>
-        <li><span>Butter Chicken</span><span>₹250</span></li>
-        <li><span>Paneer Butter Masala</span><span>₹220</span></li>
-        <li><span>Dal Makhani</span><span>₹180</span></li>
-        <li><span>Shahi Paneer</span><span>₹170</span></li>
-        <li><span>Kadhai Paneer</span><span>₹160</span></li>
-        <li><span>Idli</span><span>₹180</span></li>
-        <li><span>Chole bhature</span><span>₹180</span></li>
-        <li><span>Matar Paneer</span><span>₹180</span></li>
-        <li><span>Vada Pav</span><span>₹180</span></li>
-        <li><span>Biryani</span><span>₹180</span></li>
-      </ul>
-    </section>
-
-    <section class="category">
-      <h2>🥗 Starters</h2>
-      <ul>
-        <li><span>Veg Spring Rolls</span><span>₹120</span></li>
-        <li><span>paneer momo</span><span>₹200</span></li>
-        <li><span>Chicken Tikka</span><span>₹200</span></li>
-        <li><span>Chicken Tikka</span><span>₹200</span></li>
-        <li><span>Chicken Tikka</span><span>₹200</span></li>
-        <li><span>Chicken Tikka</span><span>₹200</span></li>
-        <li><span>Chicken Tikka</span><span>₹200</span></li>
-        <li><span>Chicken Tikka</span><span>₹200</span></li>
-        <li><span>Chicken Tikka</span><span>₹200</span></li>
-      </ul>
-    </section>
+       <section class="category">
+  <h2>🥗 Food</h2>
+  <ul>
+    <li class="menu-item-dropdown">
+      <div class="dropdown-header">
+        <span> Steam momos</span>
+        <button class="dropdown-toggle">▼</button>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-item">
+          <span>Veg</span><span>₹80</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Paneer</span><span>₹100</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Chicken</span><span>₹100</span>
+        </div>
+      </div>
+    </li>
+    <li class="menu-item-dropdown">
+      <div class="dropdown-header">
+        <span>Fried Momos</span>
+        <button class="dropdown-toggle">▼</button>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-item">
+          <span>veg</span><span>₹90</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Paneer</span><span>₹110</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Chicken</span><span>₹110</span>
+        </div>
+      </div>
+    </li>
+    <li class="menu-item-dropdown">
+      <div class="dropdown-header">
+        <span>Momos Kurkure</span>
+        <button class="dropdown-toggle">▼</button>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-item">
+          <span>Paneer</span><span>₹130</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Chicken</span><span>₹130</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Only Curry</span><span>₹120</span>
+        </div>
+      </div>
+    </li>
+    <li class="menu-item-dropdown">
+      <div class="dropdown-header">
+        <span>Burger</span>
+        <button class="dropdown-toggle">▼</button>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-item">
+          <span>Veg</span><span>₹70</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Paneer</span><span>₹100</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Chicken</span><span>₹100</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Cheese</span><span>₹100</span>
+        </div>
+      </div>
+    </li>
+    <li class="menu-item-dropdown">
+      <div class="dropdown-header">
+        <span>Sandwich</span>
+        <button class="dropdown-toggle">▼</button>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-item">
+          <span>Veg</span><span>₹100</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Paneer</span><span>₹130</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Chicken</span><span>₹130</span>
+        </div>
+      </div>
+    </li>
+    <li class="menu-item-dropdown">
+      <div class="dropdown-header">
+        <span>Wrap</span>
+        <button class="dropdown-toggle">▼</button>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-item">
+          <span>Paneer</span><span>₹120</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Chicken</span><span>₹120</span>
+        </div>
+      </div>
+    </li>
+    <li class="menu-item-dropdown">
+      <div class="dropdown-header">
+        <span>Garlic Bread</span>
+        <button class="dropdown-toggle">▼</button>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-item">
+          <span>Plain</span><span>₹70</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Paneer</span><span>₹100</span>
+        </div>
+        <div class="dropdown-item">
+          <span>Cheese</span><span>₹100</span>
+        </div>
+      </div>
+    </li>
+    <li><span>Cold Coffee</span><span>₹80</span></li>
+    <li><span>Cold Coffee</span><span>₹80</span></li>
+    <li><span>Cold Coffee</span><span>₹80</span></li>
+    <li><span>Cold Coffee</span><span>₹80</span></li>
+  </ul>
+</section>
 
     <section class="category">
       <h2>🍹 Beverages</h2>
@@ -67,15 +194,10 @@
     <section class="category">
       <h2>🍰 Desserts</h2>
       <ul>
-        <li><span>Gulab Jamun (2 pcs)</span><span>₹50</span></li>
-        <li><span>Chocolate Brownie</span><span>₹90</span></li>
-        <li><span>Gulab Jamun (2 pcs)</span><span>₹50</span></li>
-        <li><span>Gulab Jamun (2 pcs)</span><span>₹50</span></li>
-        <li><span>Gulab Jamun (2 pcs)</span><span>₹50</span></li>
-       <li><span>Gulab Jamun (2 pcs)</span><span>₹50</span></li>
-        <li><span>Gulab Jamun (2 pcs)</span><span>₹50</span></li>
-        <li><span>Gulab Jamun (2 pcs)</span><span>₹50</span></li>
-        <li><span>Gulab Jamun (2 pcs)</span><span>₹50</span></li>
+        <li><span>Chocolava cake</span><span>₹60</span></li>
+        <li><span>Chocolachocolate decadence jar cakete Brownie</span><span>₹60</span></li>
+        <li><span>banoffee jar cake</span><span>₹80</span></li>
+        <li><span>Newyork cheesecake</span><span>₹100</span></li>
       </ul>
     </section>
   </main>

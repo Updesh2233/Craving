@@ -197,15 +197,19 @@ header h1 {
 
 /* Menu Categories */
 .category {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  margin: auto;
+  margin: 1rem auto;
+  padding: 1.5rem;
   background-image: url("../download.jpeg");
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .category h2 {
   font-size: 1.5rem;
   color: #040b12;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 .category ul {
   list-style: none;
@@ -213,17 +217,20 @@ header h1 {
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 1rem;
-  align-items: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  width: 100%;
 }
 .category li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 48%;
+  width: calc(50% - 0.5rem);
   min-width: 250px;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   border-bottom: 1px solid #c38585;
   box-sizing: border-box;
+  margin: 0.25rem;
 }
 
 /* Dropdown styles */

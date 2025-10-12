@@ -8,14 +8,11 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-      
       dropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', function(e) {
           e.preventDefault();
           const dropdownContent = this.closest('.menu-item-dropdown').querySelector('.dropdown-content');
           dropdownContent.classList.toggle('show');
-          
-          // Close other dropdowns
           document.querySelectorAll('.dropdown-content').forEach(content => {
             if (content !== dropdownContent) {
               content.classList.remove('show');
@@ -23,8 +20,6 @@
           });
         });
       });
-
-      // Close dropdowns when clicking outside
       document.addEventListener('click', function(e) {
         if (!e.target.closest('.menu-item-dropdown')) {
           document.querySelectorAll('.dropdown-content').forEach(content => {
@@ -38,217 +33,134 @@
 <body>
   <header>
     <h1>Craving Kitchen</h1>
-    <p>Scan the QR code to view this menu anytime!</p>
+    <p>Crave It, Crack It, Love It</p>
   </header>
 
   <main>
-       <section class="category">
-  <h2>🥗 Food</h2>
-  <ul>
-    <li class="menu-item-dropdown">
-      <div class="dropdown-header">
-        <span> Steam momos</span>
-        <button class="dropdown-toggle">▼</button>
-      </div>
-      <div class="dropdown-content">
-        <div class="dropdown-item">
-          <span>Veg</span><span>₹80</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Paneer</span><span>₹100</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Chicken</span><span>₹100</span>
-        </div>
-      </div>
-    </li>
-    <li class="menu-item-dropdown">
-      <div class="dropdown-header">
-        <span>Fried Momos</span>
-        <button class="dropdown-toggle">▼</button>
-      </div>
-      <div class="dropdown-content">
-        <div class="dropdown-item">
-          <span>veg</span><span>₹90</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Paneer</span><span>₹110</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Chicken</span><span>₹110</span>
-        </div>
-      </div>
-    </li>
-    <li class="menu-item-dropdown">
-      <div class="dropdown-header">
-        <span>Momos Kurkure</span>
-        <button class="dropdown-toggle">▼</button>
-      </div>
-      <div class="dropdown-content">
-        <div class="dropdown-item">
-          <span>Paneer</span><span>₹130</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Chicken</span><span>₹130</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Only Curry</span><span>₹120</span>
-        </div>
-      </div>
-    </li>
-    <li class="menu-item-dropdown">
-      <div class="dropdown-header">
-        <span>Burger</span>
-        <button class="dropdown-toggle">▼</button>
-      </div>
-      <div class="dropdown-content">
-        <div class="dropdown-item">
-          <span>Veg</span><span>₹70</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Paneer</span><span>₹100</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Chicken</span><span>₹100</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Cheese</span><span>₹100</span>
-        </div>
-      </div>
-    </li>
-    <li class="menu-item-dropdown">
-      <div class="dropdown-header">
-        <span>Sandwich</span>
-        <button class="dropdown-toggle">▼</button>
-      </div>
-      <div class="dropdown-content">
-        <div class="dropdown-item">
-          <span>Veg</span><span>₹100</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Paneer</span><span>₹130</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Chicken</span><span>₹130</span>
-        </div>
-      </div>
-    </li>
-    <li class="menu-item-dropdown">
-      <div class="dropdown-header">
-        <span>Wrap</span>
-        <button class="dropdown-toggle">▼</button>
-      </div>
-      <div class="dropdown-content">
-        <div class="dropdown-item">
-          <span>Paneer</span><span>₹120</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Chicken</span><span>₹120</span>
-        </div>
-      </div>
-    </li>
-    <li class="menu-item-dropdown">
-      <div class="dropdown-header">
-        <span>Garlic Bread</span>
-        <button class="dropdown-toggle">▼</button>
-      </div>
-      <div class="dropdown-content">
-        <div class="dropdown-item">
-          <span>Plain</span><span>₹70</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Paneer</span><span>₹100</span>
-        </div>
-        <div class="dropdown-item">
-          <span>Cheese</span><span>₹100</span>
-        </div>
-      </div>
-    </li>
-    <li><span>Cold Coffee</span><span>₹80</span></li>
-    <li><span>Cold Coffee</span><span>₹80</span></li>
-    <li><span>Cold Coffee</span><span>₹80</span></li>
-    <li><span>Cold Coffee</span><span>₹80</span></li>
-  </ul>
-</section>
-
+    <!-- 🥗 FOOD SECTION -->
     <section class="category">
-      <h2>🍹 Beverages</h2>
+      <h2>🥗 Food</h2>
       <ul>
-        <li><span>Flavours Available- [cheesecake Icon, caramel, hazelnut, chocolate, vanilla, Oreo, Brownie]</span><span>+ ₹20</span></li>
-        <li><span>classic cold coffee</span><span>₹100</span></li>
-        <li><span>Beaten Cold Coffee </span><span>₹80</span></li>
-        <li><span>Iced Latte </span><span>₹80</span></li>
-        <li><span>Iced Cappuccino</span><span>₹80</span></li>
-        <li><span>South Indian Filter Coffee </span><span>₹80</span></li>
-        <li><span>Hot Cappuccino </span><span>₹80</span></li>
-        <li><span>Hot Latte </span><span>₹80</span></li>
-        <li><span>Cafe Mocha</span><span>₹100</span></li>
-        <li><span>Hot Chocolate </span><span>₹100</span></li>
-
-        <li><span>Black coffee </span></li>
-        <li><span>Pour over</span><span>₹70</span></li>
-        <li><span>Iced Cranberry coffee </span><span>₹80</span></li>
-        <li><span>Iced Nitro black coffee </span><span>₹80</span></li>
-        <li><span>Lichi cold brew </span><span>₹100</span></li>
-        <li><span>coconut cold brew</span><span>₹100</span></li>
-
-        <li><span>Coolers & Mocktails</span></li>
-        <li><span>Mint Mojito </span><span>₹70</span></li>
-        <li><span>Blueberry Mojito </span><span>₹70</span></li>
-        <li><span>Black current Mojito</span><span>₹70</span></li>
-        <li><span>Strawberry Mojito</span><span>₹70</span></li>
-        <li><span>Cranberry Slush</span><span>₹80</span></li>
-        <li><span>Strawberry Slush </span><span>₹80</span></li>
-        <li><span>Black current Slush </span><span>₹80</span></li>
+        <li class="menu-item-dropdown">
+          <div class="dropdown-header">
+            <span>Steam Momos</span>
+            <button class="dropdown-toggle">▼</button>
+          </div>
+          <div class="dropdown-content">
+            <div class="dropdown-item"><span>Veg</span><span>₹80</span></div>
+            <div class="dropdown-item"><span>Paneer</span><span>₹100</span></div>
+            <div class="dropdown-item"><span>Chicken</span><span>₹100</span></div>
+          </div>
+        </li>
+        <li class="menu-item-dropdown">
+          <div class="dropdown-header">
+            <span>Fried Momos</span>
+            <button class="dropdown-toggle">▼</button>
+          </div>
+          <div class="dropdown-content">
+            <div class="dropdown-item"><span>Veg</span><span>₹90</span></div>
+            <div class="dropdown-item"><span>Paneer</span><span>₹110</span></div>
+            <div class="dropdown-item"><span>Chicken</span><span>₹110</span></div>
+          </div>
+        </li>
+        <li class="menu-item-dropdown">
+          <div class="dropdown-header">
+            <span>Momos Kurkure</span>
+            <button class="dropdown-toggle">▼</button>
+          </div>
+          <div class="dropdown-content">
+            <div class="dropdown-item"><span>Paneer</span><span>₹130</span></div>
+            <div class="dropdown-item"><span>Chicken</span><span>₹130</span></div>
+            <div class="dropdown-item"><span>Only Curry</span><span>₹120</span></div>
+          </div>
+        </li>
+        <li class="menu-item-dropdown">
+          <div class="dropdown-header">
+            <span>Burger</span>
+            <button class="dropdown-toggle">▼</button>
+          </div>
+          <div class="dropdown-content">
+            <div class="dropdown-item"><span>Veg</span><span>₹70</span></div>
+            <div class="dropdown-item"><span>Paneer</span><span>₹100</span></div>
+            <div class="dropdown-item"><span>Chicken</span><span>₹100</span></div>
+            <div class="dropdown-item"><span>Cheese</span><span>₹100</span></div>
+          </div>
+        </li>
+        <li class="menu-item-dropdown">
+          <div class="dropdown-header">
+            <span>Sandwich</span>
+            <button class="dropdown-toggle">▼</button>
+          </div>
+          <div class="dropdown-content">
+            <div class="dropdown-item"><span>Veg</span><span>₹100</span></div>
+            <div class="dropdown-item"><span>Paneer</span><span>₹130</span></div>
+            <div class="dropdown-item"><span>Chicken</span><span>₹130</span></div>
+          </div>
+        </li>
+        <li class="menu-item-dropdown">
+          <div class="dropdown-header">
+            <span>Wrap</span>
+            <button class="dropdown-toggle">▼</button>
+          </div>
+          <div class="dropdown-content">
+            <div class="dropdown-item"><span>Paneer</span><span>₹120</span></div>
+            <div class="dropdown-item"><span>Chicken</span><span>₹120</span></div>
+          </div>
+        </li>
       </ul>
     </section>
 
+    <!-- 🍹 BEVERAGES -->
+    <section class="category">
+      <h2>🍹 Beverages</h2>
+      <ul>
+         <li class="flavour"><span>Flavours Available- [cheesecake Icon, caramel, hazelnut, chocolate, vanilla, Oreo, Brownie]</span><span>+ ₹20</span></li>
+         <li><span>classic cold coffee</span><span>₹100</span></li>
+         <li><span>Beaten Cold Coffee </span><span>₹80</span></li>
+         <li><span>Iced Latte </span><span>₹80</span></li>
+         <li><span>Iced Cappuccino</span><span>₹80</span></li>
+         <li><span>South Indian Filter Coffee </span><span>₹80</span></li>
+         <li><span>Hot Cappuccino </span><span>₹80</span></li>
+         <li><span>Hot Latte </span><span>₹80</span></li>
+         <li><span>Cafe Mocha</span><span>₹100</span></li> 
+         <li><span>Hot Chocolate </span><span>₹100</span></li>
+         <li class="flavour"><span>Black coffee </span></li>
+         <li><span>Pour over</span><span>₹70</span></li>
+         <li><span>Iced Cranberry coffee </span><span>₹80</span></li>
+         <li><span>Iced Nitro black coffee </span><span>₹80</span></li>
+         <li><span>Lichi cold brew </span><span>₹100</span></li>
+         <li><span>coconut cold brew</span><span>₹100</span></li>
+         <li class="flavour"><span>Coolers & Mocktails</span></li>
+         <li><span>Mint Mojito </span><span>₹70</span></li> 
+         <li><span>Blueberry Mojito </span><span>₹70</span></li>
+         <li><span>Black current Mojito</span><span>₹70</span></li>
+         <li><span>Strawberry Mojito</span><span>₹70</span></li> 
+         <li><span>Cranberry Slush</span><span>₹80</span></li>
+         <li><span>Strawberry Slush </span><span>₹80</span></li>
+         <li><span>Black current Slush </span><span>₹80</span></li>
+      </ul>
+    </section>
+
+    <!-- 🍰 DESSERTS -->
     <section class="category">
       <h2>🍰 Desserts</h2>
       <ul>
-        <li><span>Chocolava cake</span><span>₹60</span></li>
-        <li><span>Chocolachocolate decadence jar cakete Brownie</span><span>₹60</span></li>
-        <li><span>banoffee jar cake</span><span>₹80</span></li>
-        <li><span>Newyork cheesecake</span><span>₹100</span></li>
+        <li><span>Chocolava Cake</span><span>₹60</span></li>
+        <li><span>Chocolate decadence jar cake</span><span>₹60</span></li>
+        <li><span>Chocolate Brownie</span><span>₹60</span></li>
+        <li><span>Banoffee Jar Cake</span><span>₹80</span></li>  
+        <li><span>New York Cheesecake</span><span>₹100</span></li>
       </ul>
     </section>
   </main>
 
   <footer>
-    <div class="footer-container">
-      <div class="footer-left">
-        <p>📞 Order via WhatsApp: <a href="https://wa.me/+918130020219">+918130020219</a></p>
-        <p>📞 Order via WhatsApp: <a href="https://wa.me/+918178867967">+918178867967</a></p>
-        <p>Order via call - +918130020219</p>
-        <p>Order via call - +918178867967</p>
-        <p>Find us on instagram - @_abcdef_</p>
-        <p>© 2025 Cloud Kitchen</p>
-      </div>
-      <div class="footer-right">
-        <h3>Rate Us</h3>
-        <form class="footer-rating-form">
-          <label for="footer-rating">Your Rating:</label>
-          <select id="footer-rating" name="footer-rating">
-            <option value="5">⭐⭐⭐⭐⭐</option>
-            <option value="4">⭐⭐⭐⭐</option>
-            <option value="3">⭐⭐⭐</option>
-            <option value="2">⭐⭐</option>
-            <option value="1">⭐</option>
-          </select>
-          <br />
-          <label for="footer-review">Review:</label>
-          <br />
-          <textarea id="footer-review" name="footer-review" rows="2" cols="20" placeholder="Write your review..."></textarea>
-          <br />
-          <button type="submit">Submit</button>
-        </form>
-        <div class="footer-latest-rating">
-          <h4>Latest Customer Rating</h4>
-          <div class="footer-rating-value">⭐⭐⭐⭐⭐</div>
-          <div class="footer-rating-text">Excellent food and service!</div>
-        </div>
-      </div>
-    </div>
+    <p>📞 Order via WhatsApp: <a href="https://wa.me/+918130020219">+91 8130020219</a></p>
+    <p>📞 Order via WhatsApp: <a href="https://wa.me/+918178867967">+918178867967</a></p> 
+    <p>Order via call - +918130020219</p> 
+    <p>Order via call - +918178867967</p> 
+    <p>Find us on instagram - @_abcdef_</p>
+    <p>© 2025 Cloud Kitchen</p>
   </footer>
 </body>
 </html>

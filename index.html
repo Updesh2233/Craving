@@ -3,216 +3,268 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cloud Kitchen menu</title>
+  <title>Craving Kitchen Menu</title>
   <link rel="stylesheet" href="styles.css" />
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-      dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          const dropdownContent = this.closest('.menu-item-dropdown').querySelector('.dropdown-content');
-          dropdownContent.classList.toggle('show');
-          document.querySelectorAll('.dropdown-content').forEach(content => {
-            if (content !== dropdownContent) {
-              content.classList.remove('show');
-            }
-          });
-        });
-      });
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('.menu-item-dropdown')) {
-          document.querySelectorAll('.dropdown-content').forEach(content => {
-            content.classList.remove('show');
-          });
-        }
-      });
-    });
-  </script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
     <h1>Craving Kitchen</h1>
     <p>Crave It, Take It, Love It</p>
+    <p> Tap on the item to add in Cart to Order</p>
+    
   </header>
 
   <main>
-    <!-- FOOD SECTION -->
     <section class="category">
       <h2>😋 Food</h2>
       <ul>
         <li class="menu-item-dropdown">
           <div class="dropdown-header">
-            <span>🥟Momos</span>
+            <span>🥟 Momos</span>
             <button class="dropdown-toggle">▼</button>
           </div>
           <div class="dropdown-content">
-            <div class="dropdown-item"><span>Fried Veg Momos</span><span>₹90</span></div>
-            <div class="dropdown-item"><span>Fried Paneer Momos</span><span>₹110</span></div>
-            <div class="dropdown-item"><span>Fried Chicken Momos</span><span>₹110</span></div>
-            <div class="dropdown-item"><span>Kurkure Veg momos</span><span>₹120</span></div>
-            <div class="dropdown-item"><span>Kurkure Paneer momos</span><span>₹130</span></div>
-            <div class="dropdown-item"><span>Kurkure Chicken momos</span><span>₹130</span></div>
+            <div class="dropdown-item standard-item" data-name="Fried Veg Momos" data-price="90"><span>Fried Veg Momos</span><span>₹90</span></div>
+            <div class="dropdown-item standard-item" data-name="Fried Paneer Momos" data-price="110"><span>Fried Paneer Momos</span><span>₹110</span></div>
+            <div class="dropdown-item standard-item" data-name="Fried Chicken Momos" data-price="110"><span>Fried Chicken Momos</span><span>₹110</span></div>
+            <div class="dropdown-item standard-item" data-name="Kurkure Veg momos" data-price="120"><span>Kurkure Veg Momos</span><span>₹120</span></div>
+            <div class="dropdown-item standard-item" data-name="Kurkure Paneer momos" data-price="130"><span>Kurkure Paneer Momos</span><span>₹130</span></div>
+            <div class="dropdown-item standard-item" data-name="Kurkure Chicken momos" data-price="130"><span>Kurkure Chicken Momos</span><span>₹130</span></div>
           </div>
         </li>
+
         <li class="menu-item-dropdown">
           <div class="dropdown-header">
-            <span>🍔Burger</span>
+            <span>🍔 Burger</span>
             <button class="dropdown-toggle">▼</button>
           </div>
           <div class="dropdown-content">
-            <div class="dropdown-item"><span>Veg burger</span><span>₹80</span></div>
-            <div class="dropdown-item"><span>Veg makhani burger</span><span>₹100</span></div>
-            <div class="dropdown-item"><span>Paneer burger</span><span>₹100</span></div>
-            <div class="dropdown-item"><span>Paneer makhani burger</span><span>₹120</span></div>
-            <div class="dropdown-item"><span>Chicken burger</span><span>₹100</span></div>
-            <div class="dropdown-item"><span>Chicken makhani burger</span><span>₹120</span></div>
+            <div class="dropdown-item standard-item" data-name="Veg burger" data-price="80"><span>Veg Burger</span><span>₹80</span></div>
+            <div class="dropdown-item standard-item" data-name="Veg makhani burger" data-price="100"><span>Veg Makhani Burger</span><span>₹100</span></div>
+            <div class="dropdown-item standard-item" data-name="Paneer burger" data-price="100"><span>Paneer Burger</span><span>₹100</span></div>
+            <div class="dropdown-item standard-item" data-name="Paneer makhani burger" data-price="120"><span>Paneer Makhani Burger</span><span>₹120</span></div>
+            <div class="dropdown-item standard-item" data-name="Chicken burger" data-price="100"><span>Chicken Burger</span><span>₹100</span></div>
+            <div class="dropdown-item standard-item" data-name="Chicken makhani burger" data-price="120"><span>Chicken Makhani Burger</span><span>₹120</span></div>
           </div>
         </li>
+
         <li class="menu-item-dropdown">
           <div class="dropdown-header">
-            <span>🥪Sandwich</span>
+            <span>🥪 Sandwich</span>
             <button class="dropdown-toggle">▼</button>
           </div>
           <div class="dropdown-content">
-            <div class="dropdown-item"><span>Bombay club sandwich</span><span>₹130</span></div>
-            <div class="dropdown-item"><span>Desi italiano Veg sandwich</span><span>₹140</span></div>
-            <div class="dropdown-item"><span>Desi italiano Chicken sandwich</span><span>₹160</span></div>
-            <div class="dropdown-item"><span>Paneer tikka sandwich</span><span>₹150</span></div>
-            <div class="dropdown-item"><span>Chicken tikka Sandwich</span><span>₹150</span></div>
+            <div class="dropdown-item standard-item" data-name="Bombay club sandwich" data-price="130"><span>Bombay Club Sandwich</span><span>₹130</span></div>
+            <div class="dropdown-item standard-item" data-name="Desi italiano Veg sandwich" data-price="140"><span>Desi Italiano Veg Sandwich</span><span>₹140</span></div>
+            <div class="dropdown-item standard-item" data-name="Desi italiano Chicken sandwich" data-price="160"><span>Desi Italiano Chicken Sandwich</span><span>₹160</span></div>
+            <div class="dropdown-item standard-item" data-name="Paneer tikka sandwich" data-price="150"><span>Paneer Tikka Sandwich</span><span>₹150</span></div>
+            <div class="dropdown-item standard-item" data-name="Chicken tikka Sandwich" data-price="150"><span>Chicken Tikka Sandwich</span><span>₹150</span></div>
           </div>
         </li>
+
         <li class="menu-item-dropdown">
           <div class="dropdown-header">
-            <span>🥙Kulcha</span>
+            <span>🥙 Kulcha</span>
             <button class="dropdown-toggle">▼</button>
           </div>
           <div class="dropdown-content">
-            <div class="dropdown-item"><span>Indian style paneer kulcha</span><span>₹130</span></div>
-            <div class="dropdown-item"><span>Desi pizza kulcha</span><span>₹120</span></div>
-            <div class="dropdown-item"><span>Chicken cheese egg kulcha sandwich</span><span>₹150</span></div>
+            <div class="dropdown-item standard-item" data-name="Indian style paneer kulcha" data-price="130"><span>Indian Style Paneer Kulcha</span><span>₹130</span></div>
+            <div class="dropdown-item standard-item" data-name="Desi pizza kulcha" data-price="120"><span>Desi Pizza Kulcha</span><span>₹120</span></div>
+            <div class="dropdown-item standard-item" data-name="Chicken cheese egg kulcha sandwich" data-price="150"><span>Chicken Cheese Egg Kulcha Sandwich</span><span>₹150</span></div>
           </div>
         </li>
+
         <li class="menu-item-dropdown">
           <div class="dropdown-header">
-            <span>🥢Chinese</span>
+            <span>🥢 Chinese</span>
             <button class="dropdown-toggle">▼</button>
           </div>
           <div class="dropdown-content">
-            <div class="dropdown-item"><span>Chilli Potato</span><span>₹100</span></div>
-            <div class="dropdown-item"><span>Honey chilli potato</span><span>₹120</span></div>
-             <div class="dropdown-item"><span>Spring roll</span><span>₹60</span></div>
+            <div class="dropdown-item standard-item" data-name="Chilli Potato" data-price="100"><span>Chilli Potato</span><span>₹100</span></div>
+            <div class="dropdown-item standard-item" data-name="Honey chilli potato" data-price="120"><span>Honey Chilli Potato</span><span>₹120</span></div>
+            <div class="dropdown-item standard-item" data-name="Spring roll" data-price="60"><span>Spring Roll</span><span>₹60</span></div>
           </div>
         </li>
+
         <li class="menu-item-dropdown">
           <div class="dropdown-header">
-            <span>🍝Pasta</span>
+            <span>🍝 Pasta</span>
             <button class="dropdown-toggle">▼</button>
           </div>
           <div class="dropdown-content">
-            <div class="dropdown-item"><span>Alfredo sauce pasta</span><span>₹160</span></div>
-            <div class="dropdown-item"><span>Arabiata sauce pasta</span><span>₹160</span></div>
-             <div class="dropdown-item"><span>Mix sauce pasta</span><span>₹160</span></div>
+            <div class="dropdown-item standard-item" data-name="Alfredo sauce pasta" data-price="160"><span>Alfredo Sauce Pasta</span><span>₹160</span></div>
+            <div class="dropdown-item standard-item" data-name="Arabiata sauce pasta" data-price="160"><span>Arabiata Sauce Pasta</span><span>₹160</span></div>
+            <div class="dropdown-item standard-item" data-name="Mix sauce pasta" data-price="160"><span>Mix Sauce Pasta</span><span>₹160</span></div>
           </div>
         </li>
+
         <li class="menu-item-dropdown">
           <div class="dropdown-header">
-            <span>🌯Wrap</span>
+            <span>🌯 Wrap</span>
             <button class="dropdown-toggle">▼</button>
           </div>
           <div class="dropdown-content">
-            <div class="dropdown-item"><span>Paneer tikka wrap</span><span>₹120</span></div>
-            <div class="dropdown-item"><span>Chicken tikka wrap</span><span>₹120</span></div>
+            <div class="dropdown-item standard-item" data-name="Paneer tikka wrap" data-price="120"><span>Paneer Tikka Wrap</span><span>₹120</span></div>
+            <div class="dropdown-item standard-item" data-name="Chicken tikka wrap" data-price="120"><span>Chicken Tikka Wrap</span><span>₹120</span></div>
           </div>
         </li>
+
         <li class="menu-item-dropdown">
           <div class="dropdown-header">
-            <span>🍟Fries</span>
+            <span>🍟 Fries</span>
             <button class="dropdown-toggle">▼</button>
           </div>
           <div class="dropdown-content">
-            <div class="dropdown-item"><span>Salted fries</span><span>₹70</span></div>
-            <div class="dropdown-item"><span>Cheese fries</span><span>₹110</span></div>
-            <div class="dropdown-item"><span>peri peri fries</span><span>₹90</span></div>
+            <div class="dropdown-item standard-item" data-name="Salted fries" data-price="70"><span>Salted Fries</span><span>₹70</span></div>
+            <div class="dropdown-item standard-item" data-name="Cheese fries" data-price="110"><span>Cheese Fries</span><span>₹110</span></div>
+            <div class="dropdown-item standard-item" data-name="peri peri fries" data-price="90"><span>Peri Peri Fries</span><span>₹90</span></div>
           </div>
         </li>
-         <li class="menu-item-dropdown">
+
+        <li class="menu-item-dropdown">
           <div class="dropdown-header">
-            <span>🍞Garlic Bread</span>
+            <span>🍞 Garlic Bread</span>
             <button class="dropdown-toggle">▼</button>
           </div>
           <div class="dropdown-content">
-            <div class="dropdown-item"><span>Plain garlic bread</span><span>₹70</span></div>
-            <div class="dropdown-item"><span>Cheese chilli toast</span><span>₹100</span></div>
-            <div class="dropdown-item"><span>Panner tikka garlic bread</span><span>₹100</span></div>
-            <div class="dropdown-item"><span>Jalapeno corn & cheese garlic bread</span><span>₹100</span></div>
-            <div class="dropdown-item"><span>Cheese garlic bread</span><span>₹100</span></div>
+            <div class="dropdown-item standard-item" data-name="Plain garlic bread" data-price="70"><span>Plain Garlic Bread</span><span>₹70</span></div>
+            <div class="dropdown-item standard-item" data-name="Cheese chilli toast" data-price="100"><span>Cheese Chilli Toast</span><span>₹100</span></div>
+            <div class="dropdown-item standard-item" data-name="Panner tikka garlic bread" data-price="100"><span>Paneer Tikka Garlic Bread</span><span>₹100</span></div>
+            <div class="dropdown-item standard-item" data-name="Jalapeno corn & cheese garlic bread" data-price="100"><span>Jalapeno Corn & Cheese Garlic Bread</span><span>₹100</span></div>
+            <div class="dropdown-item standard-item" data-name="Cheese garlic bread" data-price="100"><span>Cheese Garlic Bread</span><span>₹100</span></div>
           </div>
         </li>
-         <li class="menu-item-dropdown">
+
+        <li class="menu-item-dropdown">
           <div class="dropdown-header">
-            <span>🍜Maggie</span>
+            <span>🍜 Maggie</span>
             <button class="dropdown-toggle">▼</button>
           </div>
           <div class="dropdown-content">
-            <div class="dropdown-item"><span>Veg maggie</span><span>₹50</span></div>
-            <div class="dropdown-item"><span>Masala maggie</span><span>₹70</span></div>
-            <div class="dropdown-item"><span>Cheese maggie</span><span>₹80</span></div>
+            <div class="dropdown-item standard-item" data-name="Veg maggie" data-price="50"><span>Veg Maggie</span><span>₹50</span></div>
+            <div class="dropdown-item standard-item" data-name="Masala maggie" data-price="70"><span>Masala Maggie</span><span>₹70</span></div>
+            <div class="dropdown-item standard-item" data-name="Cheese maggie" data-price="80"><span>Cheese Maggie</span><span>₹80</span></div>
           </div>
         </li>
       </ul>
     </section>
 
-    <!-- 🍹 BEVERAGES -->
     <section class="category">
-      <h2>🍹 Beverages</h2>
+      <h2>🍹 Beverages <small style="display:block; font-size:12px; color:#777; font-weight:normal; margin-top:4px;">Tap coffees to customize with flavors</small></h2>
       <ul>
-         <li class="flavour"><span>Flavours Available- [🍰Cheesecake,🍯Caramel,<br> 🌰Hazelnut, 🍫Chocolate, 🍦Vanilla, ⚫Oreo, 🟫Brownie]</span><span class="flavour">+ ₹20</span></li>
-         <li><span>Classic Cold Coffee</span><span>₹100</span></li>
-         <li><span>Beaten Cold Coffee </span><span>₹80</span></li>
-         <li><span>Iced Latte </span><span>₹80</span></li>
-         <li><span>Iced Cappuccino</span><span>₹80</span></li>
-         <li><span>South Indian Filter Coffee </span><span>₹80</span></li>
-         <li><span>Hot Cappuccino </span><span>₹80</span></li>
-         <li><span>Hot Latte </span><span>₹80</span></li>
-         <li><span>Cafe Mocha</span><span>₹100</span></li> 
-         <li><span>Hot Chocolate </span><span>₹100</span></li>
-         <li class="flavour"><span>Black coffee </span></li>
-         <li><span>Pour Over</span><span>₹70</span></li>
-         <li><span>Iced Cranberry Coffee </span><span>₹80</span></li>
-         <li><span>Iced Nitro Black Coffee </span><span>₹80</span></li>
-         <li><span>Lychee Cold Brew </span><span>₹100</span></li>
-         <li><span>Coconut Cold Brew</span><span>₹100</span></li>
-         <li class="flavour"><span>Coolers & Mocktails</span></li>
-         <li><span>Mint Mojito </span><span>₹70</span></li> 
-         <li><span>Blueberry Mojito </span><span>₹70</span></li>
-         <li><span>Black current Mojito</span><span>₹70</span></li>
-         <li><span>Strawberry Mojito</span><span>₹70</span></li> 
-         <li><span>Cranberry Slush</span><span>₹80</span></li>
-         <li><span>Strawberry Slush </span><span>₹80</span></li>
-         <li><span>Black Current Slush </span><span>₹80</span></li>
+        <!-- <li class="flavour-info">
+          <span>Flavours Available - [🍰Cheesecake, 🍯Caramel, 🌰Hazelnut, 🍫Chocolate, 🍦Vanilla, ⚫Oreo, 🟫Brownie]</span>
+          <span class="price-add">+ ₹20</span>
+        </li> -->
+        
+        <li class="coffee-item" data-name="Classic Cold Coffee" data-price="100"><span>Classic Cold Coffee</span><span>₹100</span></li>
+        <li class="coffee-item" data-name="Beaten Cold Coffee" data-price="80"><span>Beaten Cold Coffee</span><span>₹80</span></li>
+        <li class="coffee-item" data-name="Iced Latte" data-price="80"><span>Iced Latte</span><span>₹80</span></li>
+        <li class="coffee-item" data-name="Iced Cappuccino" data-price="80"><span>Iced Cappuccino</span><span>₹80</span></li>
+        <li class="coffee-item" data-name="South Indian Filter Coffee" data-price="80"><span>South Indian Filter Coffee</span><span>₹80</span></li>
+        <li class="coffee-item" data-name="Hot Cappuccino" data-price="80"><span>Hot Cappuccino</span><span>₹80</span></li>
+        <li class="coffee-item" data-name="Hot Latte" data-price="80"><span>Hot Latte</span><span>₹80</span></li>
+        <li class="coffee-item" data-name="Cafe Mocha" data-price="100"><span>Cafe Mocha</span><span>₹100</span></li> 
+        <li class="coffee-item" data-name="Hot Chocolate" data-price="100"><span>Hot Chocolate</span><span>₹100</span></li>
+        
+        <li class="flavour-heading"><span>Black Coffee & Brews</span></li>
+        <li class="coffee-item" data-name="Pour Over" data-price="70"><span>Pour Over</span><span>₹70</span></li>
+        <li class="coffee-item" data-name="Iced Cranberry Coffee" data-price="80"><span>Iced Cranberry Coffee</span><span>₹80</span></li>
+        <li class="coffee-item" data-name="Iced Nitro Black Coffee" data-price="80"><span>Iced Nitro Black Coffee</span><span>₹80</span></li>
+        <li class="coffee-item" data-name="Lychee Cold Brew" data-price="100"><span>Lychee Cold Brew</span><span>₹100</span></li>
+        <li class="coffee-item" data-name="Coconut Cold Brew" data-price="100"><span>Coconut Cold Brew</span><span>₹100</span></li>
+        
+        <li class="flavour-heading"><span>Coolers & Mocktails</span></li>
+        <li class="standard-item" data-name="Mint Mojito" data-price="70"><span>Mint Mojito</span><span>₹70</span></li> 
+        <li class="standard-item" data-name="Blueberry Mojito" data-price="70"><span>Blueberry Mojito</span><span>₹70</span></li>
+        <li class="standard-item" data-name="Black current Mojito" data-price="70"><span>Black Current Mojito</span><span>₹70</span></li>
+        <li class="standard-item" data-name="Strawberry Mojito" data-price="70"><span>Strawberry Mojito</span><span>₹70</span></li> 
+        <li class="standard-item" data-name="Cranberry Slush" data-price="80"><span>Cranberry Slush</span><span>₹80</span></li>
+        <li class="standard-item" data-name="Strawberry Slush" data-price="80"><span>Strawberry Slush</span><span>₹80</span></li>
+        <li class="standard-item" data-name="Black Current Slush" data-price="80"><span>Black Current Slush</span><span>₹80</span></li>
       </ul>
     </section>
 
-    <!-- 🍰 DESSERTS -->
     <section class="category">
       <h2>🍰 Desserts</h2>
       <ul>
-        <li><span>Chocolava Cake</span><span>₹60</span></li>
-        <li><span>Chocolate Decadence Jar Cake</span><span>₹60</span></li>
-        <li><span>Chocolate Brownie</span><span>₹60</span></li>
-        <li><span>Banoffee Jar Cake</span><span>₹80</span></li>  
+        <li class="standard-item" data-name="Chocolava Cake" data-price="60"><span>Chocolava Cake</span><span>₹60</span></li>
+        <li class="standard-item" data-name="Chocolate Decadence Jar Cake" data-price="60"><span>Chocolate Decadence Jar Cake</span><span>₹60</span></li>
+        <li class="standard-item" data-name="Chocolate Brownie" data-price="60"><span>Chocolate Brownie</span><span>₹60</span></li>
+        <li class="standard-item" data-name="Banoffee Jar Cake" data-price="80"><span>Banoffee Jar Cake</span><span>₹80</span></li>  
       </ul>
     </section>
   </main>
 
+  <div id="flavourModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3 id="modalCoffeeName">Customize Coffee</h3>
+      <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Choose a flavour combination variant:</p>
+      
+      <div id="flavourOptionsContainer">
+        <div class="flavour-option selected" data-flavour="Regular" data-addon="0">
+          <span>Standard Plain / No Flavour</span><span>+ ₹0</span>
+        </div>
+        <div class="flavour-option" data-flavour="Cheesecake" data-addon="20">
+          <span>🍰 Cheesecake</span><span>+ ₹20</span>
+        </div>
+        <div class="flavour-option" data-flavour="Caramel" data-addon="20">
+          <span>🍯 Caramel</span><span>+ ₹20</span>
+        </div>
+        <div class="flavour-option" data-flavour="Hazelnut" data-addon="20">
+          <span>🌰 Hazelnut</span><span>+ ₹20</span>
+        </div>
+        <div class="flavour-option" data-flavour="Chocolate" data-addon="20">
+          <span>🍫 Chocolate</span><span>+ ₹20</span>
+        </div>
+        <div class="flavour-option" data-flavour="Vanilla" data-addon="20">
+          <span>🍦 Vanilla</span><span>+ ₹20</span>
+        </div>
+        <div class="flavour-option" data-flavour="Oreo" data-addon="20">
+          <span>⚫ Oreo</span><span>+ ₹20</span>
+        </div>
+        <div class="flavour-option" data-flavour="Brownie" data-addon="20">
+          <span>🟫 Brownie</span><span>+ ₹20</span>
+        </div>
+      </div>
+      <button id="addToCartBtn" class="add-to-cart-btn">➕ Add To Cart</button>
+    </div>
+  </div>
+
+  <div id="bottomCartBar" class="bottom-cart">
+    <div class="cart-summary-info">
+      <span id="cartItemCount">0</span>
+      <div>
+        <div style="font-size: 12px; opacity: 0.8;">Items Selected</div>
+        <div id="cartTotalPrice">Total: ₹0</div>
+      </div>
+    </div>
+    <button class="view-cart-btn" onclick="sendWhatsAppOrder()">Order via WhatsApp ➔</button>
+  </div>
+
   <footer>
-    <p>📞 Order via WhatsApp: <a href="https://wa.me/+918130020219">+91 8130020219</a></p>
-    <p>📞 Order via WhatsApp: <a href="https://wa.me/+918178867967">+918178867967</a></p> 
-    <p>Order via call - +918130020219</p> 
-    <p>Order via call - +918178867967</p> 
-    <p>Find us on instagram - <a href="https://instagram.com/crav_ingkitchen" target="_blank">@crav_ingkitchen</a></p>
-    <p>© 2025 Cloud Kitchen</p>
+    <div class="review-system-container">
+      <h3>Customer Reviews</h3>
+      
+      <form id="reviewForm">
+        <input type="text" id="reviewName" placeholder="Your Name" required />
+        <textarea id="reviewComment" rows="3" placeholder="Tell us about your experience..." required></textarea>
+        <button type="submit" id="submitReviewBtn">Submit Live Review</button>
+      </form>
+
+      <div id="reviewsFeed">
+        <p style="text-align: center; color: #a4b0be; font-size: 13px; padding: 15px;">Loading community reviews...</p>
+      </div>
+    </div>
+
+    <div class="footer-contacts">
+      <p>📞 Order via WhatsApp: <a href="https://wa.me/918130020219" target="_blank">+91 8130020219</a> | <a href="https://wa.me/918178867967" target="_blank">+91 8178867967</a></p> 
+      <p>📞 Order via call - <a href="tel:+918130020219">+91 8130020219</a> | <a href="tel:+918178867967">+91 8178867967</a></p> 
+      <p>📸 Find us on Instagram - <a href="https://instagram.com/crav_ingkitchen" target="_blank">@crav_ingkitchen</a></p>
+      <p style="margin-top: 15px; font-size: 11px; opacity: 0.6;">© 2026 Craving Kitchen</p>
+    </div>
   </footer>
 </body>
 </html>

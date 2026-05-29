@@ -74,7 +74,7 @@ main {
 }
 
 .dropdown-header{
-  background-color: #fcfad2;
+  background-color: #fdfedb;
 }
 
 .standard-item, .coffee-item {
@@ -219,7 +219,7 @@ main {
 }
 
 .flavour-option.selected {
-  border-color: #ff4757;
+  border-color: #dafbb9;
   background-color: #fff0f2;
   font-weight: 600;
 }
